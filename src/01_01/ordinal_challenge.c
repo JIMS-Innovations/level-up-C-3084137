@@ -3,14 +3,21 @@
 char *ordinal(int v)
 {	
 	char *buf;
-	int last_dig = v % 10;
-	
-	switch(last_dig)
+
+	if(v == 11 || v == 12 || v == 13 )
 	{
+		buf = "th";
+	}
+	else
+	{
+		int last_dig = v % 10;
+
+		switch (last_dig)
+		{
 		case 1:
 			buf = "st";
 			break;
-		
+
 		case 2:
 			buf = "nd";
 			break;
@@ -18,11 +25,13 @@ char *ordinal(int v)
 		case 3:
 			buf = "rd";
 			break;
-		
+
 		default:
 			buf = "th";
+		}
 	}
 
+	
 	return buf;
 }
 
