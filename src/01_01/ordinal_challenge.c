@@ -1,11 +1,29 @@
 #include <stdio.h>
 
 char *ordinal(int v)
-{
-	/*
-	   - create this function
-	   - this code won't run with out it!
-	 */
+{	
+	char *buf;
+	int last_dig = v % 10;
+	
+	switch(last_dig)
+	{
+		case 1:
+			buf = "st";
+			break;
+		
+		case 2:
+			buf = "nd";
+			break;
+
+		case 3:
+			buf = "rd";
+			break;
+		
+		default:
+			buf = "th";
+	}
+
+	return buf;
 }
 
 int main()
